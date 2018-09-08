@@ -1,0 +1,25 @@
+{
+  "name": "http-api-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theheckle/http-api-assignment.git"
+  },
+  "author": "Sam Heckle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theheckle/http-api-assignment/issues"
+  },
+  "homepage": "https://github.com/theheckle/http-api-assignment#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}

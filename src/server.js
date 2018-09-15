@@ -1,11 +1,13 @@
 const http = require('http');
 const url = require('url');
-const responseHandler = require('./responses.js');
+const responseHandler = require('./htmlResponses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const urlStruct = {
   '/': responseHandler.getIndex,
+  '/style.css': responseHandler.getStyle,
+  index: responseHandler.getIndex,
 };
 
 const onRequest = (request, response) => {

@@ -27,7 +27,7 @@ const checkXMLOrJson = (request, response, responseObj, status, acceptedTypes) =
   return respond(request, response, status, res, 'application/json');
 };
 
-const success = (request, response, acceptedTypes, params) => {
+const success = (request, response, acceptedTypes) => {
   // message to send
   const responseObj = {
     message: 'This is a successful response',
@@ -36,7 +36,6 @@ const success = (request, response, acceptedTypes, params) => {
 };
 
 const badrequest = (request, response, acceptedTypes, params) => {
-
   if (params.valid === 'true') {
     const responseObj = {
       message: 'This request has the required parameters value',
@@ -54,7 +53,6 @@ const badrequest = (request, response, acceptedTypes, params) => {
 };
 
 const unauthorized = (request, response, acceptedTypes, params) => {
-
   if (params.loggedIn === 'yes') {
     const responseObj = {
       message: 'You have successfully viewed the content',
@@ -70,7 +68,7 @@ const unauthorized = (request, response, acceptedTypes, params) => {
   return checkXMLOrJson(request, response, responseObj, 401, acceptedTypes);
 };
 
-const forbidden = (request, response, acceptedTypes, params) => {
+const forbidden = (request, response, acceptedTypes) => {
   const responseObj = {
     id: 'forbidden',
     message: 'You do not have access to this content',
@@ -79,7 +77,7 @@ const forbidden = (request, response, acceptedTypes, params) => {
   return checkXMLOrJson(request, response, responseObj, 403, acceptedTypes);
 };
 
-const internal = (request, response, acceptedTypes, params) => {
+const internal = (request, response, acceptedTypes) => {
   const responseObj = {
     id: 'internalError',
     message: 'Internal Server Error. Something went wrong',
@@ -88,7 +86,7 @@ const internal = (request, response, acceptedTypes, params) => {
   return checkXMLOrJson(request, response, responseObj, 500, acceptedTypes);
 };
 
-const notimplemented = (request, response, acceptedTypes, params) => {
+const notimplemented = (request, response, acceptedTypes) => {
   const responseObj = {
     id: 'notImplemented',
     message: 'A get request has not been implemented yet. Check again later for updated content',
@@ -97,7 +95,7 @@ const notimplemented = (request, response, acceptedTypes, params) => {
   return checkXMLOrJson(request, response, responseObj, 501, acceptedTypes);
 };
 
-const notFound = (request, response, acceptedTypes, params) => {
+const notFound = (request, response, acceptedTypes) => {
   const responseObj = {
     id: 'notImplemented',
     message: 'The page you are looking for is not found',
